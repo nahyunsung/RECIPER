@@ -13,5 +13,6 @@ else:
 
 df = pd.read_csv("Food_data.csv", encoding="utf-8")
 
+st.write(df[0])
 
 
