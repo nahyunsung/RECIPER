@@ -13,6 +13,6 @@ else:
 
 df = pd.read_csv("Food_data.csv", encoding="utf-8")
 
-st.write(df[0])
+st.write(df["음식이름"])
 
 
