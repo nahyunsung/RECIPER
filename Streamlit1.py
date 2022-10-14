@@ -34,13 +34,12 @@ age = st.slider("몇 살이세요?", 0, 100, 50)
 FoodFile = pd.read_csv("Food_data.csv", encoding="utf-8")
 df = load_data()
 
-
 if GenderRadio == "남성":
     st.write("남성 환영 ", age)
-    df.sort_values("남성", ascending=False)
+    df = df.sort_values("남성", ascending=False)
 else:
     st.write("여성 환영 ", age)
-    df.sort_values("여성", ascending=False)
+    df = df.sort_values("여성", ascending=False)
 
 st.checkbox("너비 맞추기", value=False, key="use_container_width")
 
