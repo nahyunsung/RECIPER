@@ -17,4 +17,4 @@ with open('Food_data.csv','r') as f:
 
     df = pd.DataFrame(reader)
 
-    print(df[:5])
+    st.write(df[:5])
