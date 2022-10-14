@@ -24,7 +24,7 @@ def load_data(data):
         data[17][0]: data[17][1:],
         data[18][0]: data[18][1:],
         data[19][0]: data[19][1:],
-        data[20][0]: data[20][1:]
+        data[20][0]: data[20][1:],
     })
 
 
