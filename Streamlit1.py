@@ -15,5 +15,6 @@ else:
 with open('Food_data.csv','r') as f:
     reader = csv.reader(f)
 
-for x in range(6):
-    st.write(reader[x])
+    df = pd.DataFrame(reader)
+
+    print(df[:5])
