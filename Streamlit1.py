@@ -1,3 +1,4 @@
+from datetime import date
 import streamlit as st
 import pandas as pd
 
@@ -30,6 +31,9 @@ st.write("# RECIPER")
 Genders = ["남성", "여성"]
 GenderRadio = st.radio("자신의 성을 고르세요", Genders)
 age = st.slider("몇 살이세요?", 0, 100, 50)
+month = date.today()
+month = month.month
+st.write("## 이번 달 ", month)
 
 FoodFile = pd.read_csv("Food_data.csv", encoding="utf-8")
 df = load_data()
