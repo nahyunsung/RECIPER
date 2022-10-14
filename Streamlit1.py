@@ -6,7 +6,7 @@ Genders = ["남성", "여성"]
 GenderRadio = st.radio("자신의 성을 고르세요", Genders)
 age = st.slider("몇 살이세요?", 0, 100, 50)
 
-FoodData = pd.read_excel("Food_Data.xlsx", sheet_name=1)
+FoodData = pd.read_csv("Food_data1.CSV",)
 
 if GenderRadio == "남성":
     st.write("남성 환영 ", age)
