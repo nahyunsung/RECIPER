@@ -36,6 +36,7 @@ month = month.month
 st.write("## 이번 달 ", month)
 
 FoodFile = pd.read_csv("Food_data.csv", encoding="utf-8")
+FoodRecipe = pd.read_csv("recipe_listEXE.csv", encoding="utf-8")
 df = load_data()
 
 if GenderRadio == "남성":
@@ -49,16 +50,18 @@ st.checkbox("너비 맞추기", value=False, key="use_container_width")
 
 st.dataframe(df, use_container_width=st.session_state.use_container_width)
 
+st.write(FoodRecipe["title"][0])
+
 col1, col2, col3 = st.columns(3)
 
 with col1:
     Resourcedata1 = st.text_input("주요 재료1", "돼지고기")
 
 with col2:
-    Resourcedata2 = st.text_input("주요 재료2", "김치")
+    Resourcedata2 = st.text_input("주요 재료2", "마늘")
 
 with col3:
-    Resourcedata3 = st.text_input("주요 재료3", "쌀")
+    Resourcedata3 = st.text_input("주요 재료3", "달걀")
 
 if st.button("검색"):
     st.write("검색 시작")
