@@ -49,3 +49,6 @@ st.checkbox("너비 맞추기", value=False, key="use_container_width")
 
 st.dataframe(df, use_container_width=st.session_state.use_container_width)
 
+Resourcedata1 = st.text_input("주요 재료1")
+Resourcedata2 = st.text_input("주요 재료2")
+Resourcedata3 = st.text_input("주요 재료3")
