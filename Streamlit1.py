@@ -52,13 +52,11 @@ st.dataframe(df, use_container_width=st.session_state.use_container_width)
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    Resourcedata1 = st.text_input("주요 재료1")
+    Resourcedata1 = st.text_input("주요 재료1", "돼지고기")
 
 with col2:
-    Resourcedata2 = st.text_input("주요 재료2")
+    Resourcedata2 = st.text_input("주요 재료2", "김치")
 
 with col3:
-    Resourcedata3 = st.text_input("주요 재료3")
-
-
+    Resourcedata3 = st.text_input("주요 재료3", "쌀")
 
