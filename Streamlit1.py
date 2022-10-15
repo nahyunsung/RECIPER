@@ -60,3 +60,5 @@ with col2:
 with col3:
     Resourcedata3 = st.text_input("주요 재료3", "쌀")
 
+if st.button("검색"):
+    st.write("검색 시작")
