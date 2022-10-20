@@ -70,15 +70,16 @@ with col3:
         for one in FoodRecipe["Step"][2].split(sep='#'):
             FoodStep += one + "\n"
 
-st.text_area('Text to analyze', FoodStep)
+st.text_area(FoodTitle, FoodStep)
 
-with col1:
+col4, col5, col6 = st.columns(3)
+with col4:
     Resourcedata1 = st.text_input("주요 재료1", "돼지고기")
 
-with col2:
+with col5:
     Resourcedata2 = st.text_input("주요 재료2", "마늘")
 
-with col3:
+with col6:
     Resourcedata3 = st.text_input("주요 재료3", "달걀")
 
 if st.button("검색"):
