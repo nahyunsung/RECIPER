@@ -62,7 +62,14 @@ with col3:
     if(st.button(FoodRecipe["FoodName"][2])):
         st.write(FoodRecipe["FoodName"][2])
 
-st.text_area(value = " asd")
+txt = st.text_area('Text to analyze', '''
+    It was the best of times, it was the worst of times, it was
+    the age of wisdom, it was the age of foolishness, it was
+    the epoch of belief, it was the epoch of incredulity, it
+    was the season of Light, it was the season of Darkness, it
+    was the spring of hope, it was the winter of despair, (...)
+    ''')
+st.write('Sentiment:', txt)
 
 with col1:
     Resourcedata1 = st.text_input("주요 재료1", "돼지고기")
