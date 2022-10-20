@@ -62,6 +62,8 @@ with col3:
     if(st.button(FoodRecipe["FoodName"][2])):
         st.write(FoodRecipe["FoodName"][2])
 
+st.text_area(value = " asd")
+
 with col1:
     Resourcedata1 = st.text_input("주요 재료1", "돼지고기")
 
