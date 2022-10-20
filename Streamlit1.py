@@ -93,7 +93,6 @@ if st.button("검색"):
             FoodTitle2 = FoodRecipe["FoodName"][3]
             for one in FoodRecipe["Step"][3].split(sep='#'):
                 FoodStep2 += one + "\n"
-    '''
     with col8:
         if (st.button(FoodRecipe["FoodName"][4])):
             FoodTitle2 = FoodRecipe["FoodName"][4]
@@ -104,6 +103,6 @@ if st.button("검색"):
             FoodTitle2 = FoodRecipe["FoodName"][5]
             for one in FoodRecipe["Step"][5].split(sep='#'):
                 FoodStep2 += one + "\n"
-    '''
-    st.text_area(FoodTitle2, FoodStep2)
+
+
 
