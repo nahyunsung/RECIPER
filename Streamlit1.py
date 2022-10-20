@@ -93,13 +93,13 @@ if st.button("검색"):
             FoodTitle2 = FoodRecipe["FoodName"][3]
             for one in FoodRecipe["Step"][3].split(sep='#'):
                 FoodStep2 += one + "\n"
-
+    with col8:
         food2 = (st.button(FoodRecipe["FoodName"][4]))
         if food2:
             FoodTitle2 = FoodRecipe["FoodName"][4]
             for one in FoodRecipe["Step"][4].split(sep='#'):
                 FoodStep2 += one + "\n"
-
+    with col9:
         food3 = (st.button(FoodRecipe["FoodName"][5]))
         if food3:
             FoodTitle2 = FoodRecipe["FoodName"][5]
