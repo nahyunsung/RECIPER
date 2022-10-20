@@ -52,24 +52,25 @@ st.dataframe(df, use_container_width=st.session_state.use_container_width)
 
 col1, col2, col3 = st.columns(3)
 
+FoodTitle = ""
+FoodStep = ""
 with col1:
     if(st.button(FoodRecipe["FoodName"][0])):
-        st.write(FoodRecipe["FoodName"][0])
+        FoodTitle = FoodRecipe["FoodName"][0]
+        for one in FoodRecipe["Step"][0].split(sep='#'):
+            FoodStep += one + "\n"
 with col2:
     if(st.button(FoodRecipe["FoodName"][1])):
-        st.write(FoodRecipe["FoodName"][1])
+        FoodTitle = FoodRecipe["FoodName"][1]
+        for one in FoodRecipe["Step"][1].split(sep='#'):
+            FoodStep += one + "\n"
 with col3:
     if(st.button(FoodRecipe["FoodName"][2])):
-        st.write(FoodRecipe["FoodName"][2])
+        FoodTitle = FoodRecipe["FoodName"][2]
+        for one in FoodRecipe["Step"][2].split(sep='#'):
+            FoodStep += one + "\n"
 
-txt = st.text_area('Text to analyze', '''
-    It was the best of times, it was the worst of times, it was
-    the age of wisdom, it was the age of foolishness, it was
-    the epoch of belief, it was the epoch of incredulity, it
-    was the season of Light, it was the season of Darkness, it
-    was the spring of hope, it was the winter of despair, (...)
-    ''')
-st.write('Sentiment:', txt)
+st.text_area('Text to analyze', FoodStep)
 
 with col1:
     Resourcedata1 = st.text_input("주요 재료1", "돼지고기")
