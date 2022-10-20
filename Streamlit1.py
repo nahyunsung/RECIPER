@@ -70,7 +70,7 @@ with col3:
         for one in FoodRecipe["Step"][2].split(sep='#'):
             FoodStep += one + "\n"
 
-st.text_area(FoodTitle, FoodStep)
+st.text_area(FoodTitle, FoodStep, on_change=False)
 
 col4, col5, col6 = st.columns(3)
 with col4:
