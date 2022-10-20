@@ -50,10 +50,17 @@ st.checkbox("너비 맞추기", value=False, key="use_container_width")
 
 st.dataframe(df, use_container_width=st.session_state.use_container_width)
 
-if(st.button(FoodRecipe["FoodName"][0])):
-    st.write(FoodRecipe["FoodName"][0])
-
 col1, col2, col3 = st.columns(3)
+
+with col1:
+    if(st.button(FoodRecipe["FoodName"][0])):
+        st.write(FoodRecipe["FoodName"][0])
+with col2:
+    if(st.button(FoodRecipe["FoodName"][1])):
+        st.write(FoodRecipe["FoodName"][1])
+with col3:
+    if(st.button(FoodRecipe["FoodName"][1])):
+        st.write(FoodRecipe["FoodName"][1])
 
 with col1:
     Resourcedata1 = st.text_input("주요 재료1", "돼지고기")
