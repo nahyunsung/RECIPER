@@ -92,10 +92,8 @@ if st.button("검색"):
     col7, col8, col9 = st.columns(3)
     with col7:
         food1 = (st.button(FoodRecipe["FoodName"][3]))
-
-else:
-    if food1:
-        FoodTitle2 = FoodRecipe["FoodName"][3]
-        for one in FoodRecipe["Step"][3].split(sep='#'):
-            FoodStep2 += one + "\n"
+        if food1:
+            FoodTitle2 = FoodRecipe["FoodName"][3]
+            for one in FoodRecipe["Step"][3].split(sep='#'):
+                FoodStep2 += one + "\n"
 st.text_area(FoodTitle2, FoodStep2)
