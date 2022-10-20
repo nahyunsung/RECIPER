@@ -82,10 +82,11 @@ with col5:
 with col6:
     Resourcedata3 = st.text_input("주요 재료3", "달걀")
 
+
+FoodTitle2 = ""
+FoodStep2 = ""
+col7, col8, col9 = st.columns(3)
 if st.button("검색"):
-    FoodTitle2 = ""
-    FoodStep2 = ""
-    col7, col8, col9 = st.columns(3)
     with col7:
         if (st.button(FoodRecipe["FoodName"][3])):
             FoodTitle2 = FoodRecipe["FoodName"][3]
@@ -101,5 +102,5 @@ if st.button("검색"):
             FoodTitle2 = FoodRecipe["FoodName"][5]
             for one in FoodRecipe["Step"][5].split(sep='#'):
                 FoodStep2 += one + "\n"
-    st.text_area(FoodTitle2, FoodStep2)
+st.text_area(FoodTitle2, FoodStep2)
 
