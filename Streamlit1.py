@@ -85,22 +85,17 @@ with col6:
 
 FoodTitle2 = ""
 FoodStep2 = ""
-
+food1 = ""
+food2 = ""
+food3 = ""
 if st.button("검색"):
     col7, col8, col9 = st.columns(3)
     with col7:
-        if (st.button(FoodRecipe["FoodName"][3])):
-            FoodTitle2 = FoodRecipe["FoodName"][3]
-            for one in FoodRecipe["Step"][3].split(sep='#'):
-                FoodStep2 += one + "\n"
-    with col8:
-        if (st.button(FoodRecipe["FoodName"][4])):
-            FoodTitle2 = FoodRecipe["FoodName"][4]
-            for one in FoodRecipe["Step"][4].split(sep='#'):
-                FoodStep2 += one + "\n"
-    with col9:
-        if (st.button(FoodRecipe["FoodName"][5])):
-            FoodTitle2 = FoodRecipe["FoodName"][5]
-            for one in FoodRecipe["Step"][5].split(sep='#'):
-                FoodStep2 += one + "\n"
+        food1 = (st.button(FoodRecipe["FoodName"][3]))
+
+else:
+    if food1:
+        FoodTitle2 = FoodRecipe["FoodName"][3]
+        for one in FoodRecipe["Step"][3].split(sep='#'):
+            FoodStep2 += one + "\n"
 st.text_area(FoodTitle2, FoodStep2)
