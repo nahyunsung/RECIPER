@@ -30,13 +30,13 @@ def load_data():
 st.write("# RECIPER")
 Genders = ["남성", "여성"]
 GenderRadio = st.radio("자신의 성을 고르세요", Genders)
-age = st.slider("몇 살이세요?", 0, 100, 50)
+age = st.slider("몇 살이세요?", 0, 100, 18)
 month = date.today()
 month = month.month
 st.write("## 이번 달 ", month)
 
 FoodFile = pd.read_csv("Food_data.csv", encoding="utf-8")
-FoodRecipe = pd.read_csv("recipe_listEXE.csv", encoding="utf-8")
+FoodRecipe = pd.read_csv("recipe_list.csv", encoding="utf-8")
 df = load_data()
 
 if GenderRadio == "남성":
@@ -50,8 +50,9 @@ st.checkbox("너비 맞추기", value=False, key="use_container_width")
 
 st.dataframe(df, use_container_width=st.session_state.use_container_width)
 
-st.write(FoodRecipe["title"][0])
-
+if(st.button[FoodRecipe["FoodName"][0]]):
+    st.write(FoodRecipe["FoodName"][0])
+    
 col1, col2, col3 = st.columns(3)
 
 with col1:
