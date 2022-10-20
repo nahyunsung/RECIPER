@@ -70,7 +70,7 @@ with col3:
         for one in FoodRecipe["Step"][2].split(sep='#'):
             FoodStep += one + "\n"
 
-st.text_area(FoodTitle, FoodStep, on_change=False)
+st.text_area(FoodTitle, FoodStep)
 
 col4, col5, col6 = st.columns(3)
 with col4:
@@ -83,4 +83,21 @@ with col6:
     Resourcedata3 = st.text_input("주요 재료3", "달걀")
 
 if st.button("검색"):
-    st.write("검색 시작")
+    col7, col8, col9 = st.columns(3)
+    with col7:
+        if (st.button(FoodRecipe["FoodName"][3])):
+            FoodTitle = FoodRecipe["FoodName"][3]
+            for one in FoodRecipe["Step"][3].split(sep='#'):
+                FoodStep += one + "\n"
+    with col8:
+        if (st.button(FoodRecipe["FoodName"][4])):
+            FoodTitle = FoodRecipe["FoodName"][4]
+            for one in FoodRecipe["Step"][4].split(sep='#'):
+                FoodStep += one + "\n"
+    with col9:
+        if (st.button(FoodRecipe["FoodName"][5])):
+            FoodTitle = FoodRecipe["FoodName"][5]
+            for one in FoodRecipe["Step"][5].split(sep='#'):
+                FoodStep += one + "\n"
+    st.text_area(FoodTitle, FoodStep)
+
