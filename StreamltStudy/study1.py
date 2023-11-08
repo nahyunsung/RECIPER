@@ -1,3 +1,4 @@
 import streamlit as st
+from streamlit_webrtc import webrtc_streamer
 
-st.write("Asdfasdf")
+webrtc_streamer(key="sample")
