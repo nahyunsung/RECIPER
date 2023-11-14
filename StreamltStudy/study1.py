@@ -1,10 +1,28 @@
+import cv2
 import streamlit as st
-from streamlit_folium import st_folium
-import folium
+import numpy as np
 
-m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
-folium.Marker([39.949610, -75.150282],
-              popup="Liberty bell",
-              tooltip="Liberty Bell").add_to(m)
+cap = cv2.VideoCapture(1)
 
-st_data = st_folium(m, width = 725)
+st.title("Video Capture with OpenCV")
+
+frame_placeholder = st.empty()
+
+stop_button_pressed = st.button("Stop")
+
+while cap.isOpened() and not stop_button_pressed:
+    ret, frame = cap.read()
+
+    if not ret:
+        st.write("The video capture has ended.")
+        break
+
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+    frame_placeholder.image(frame, channels="RGB")
+
+    if cv2.waitKey(1) & 0xFF == ord("q") or stop_button_pressed:
+        break
+
+cap.release()
+cv2.destroyAllWindows()
