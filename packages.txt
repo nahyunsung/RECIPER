@@ -1,3 +1,0 @@
-opencv-python-dev
-streamlit-dev
-Pillow-dev
