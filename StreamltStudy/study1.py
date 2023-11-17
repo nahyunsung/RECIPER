@@ -1,28 +1,13 @@
-import cv2
+import folium
 import streamlit as st
-import numpy as np
 
-cap = cv2.VideoCapture(1)
+from streamlit_folium import st_folium
 
-st.title("Video Capture with OpenCV")
+center = [37.5010,127.0509] 
+# center on Seoul pharmacy
+m = folium.Map(location=center, zoom_start=18)
+markers = plugins.MarkerCluster(transformed_coord_list)
+markers.add_to(m) 
 
-frame_placeholder = st.empty()
-
-stop_button_pressed = st.button("Stop")
-
-while cap.isOpened() and not stop_button_pressed:
-    ret, frame = cap.read()
-
-    if not ret:
-        st.write("The video capture has ended.")
-        break
-
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-
-    frame_placeholder.image(frame, channels="RGB")
-
-    if cv2.waitKey(1) & 0xFF == ord("q") or stop_button_pressed:
-        break
-
-cap.release()
-cv2.destroyAllWindows()
+# call to render Folium map in Streamlit
+st_data = st_folium(m, width=725)
