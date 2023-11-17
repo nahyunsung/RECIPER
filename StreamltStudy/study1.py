@@ -1,11 +1,9 @@
-import folium
 import streamlit as st
+import pandas as pd
+import numpy as np
 
-from streamlit_folium import st_folium
+df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
 
-center = [37.5010,127.0509] 
-# center on Seoul pharmacy
-m = folium.Map(location=center, zoom_start=18)
-
-# call to render Folium map in Streamlit
-st_data = st_folium(m, width=725)
+st.map(df)
