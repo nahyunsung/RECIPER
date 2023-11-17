@@ -1,5 +1,4 @@
-from streamlit_folium import st_folium
+import streamlit as st
 import folium
-center = [37.541, 126.986]
-m = folium.Map(location=center, zoom_start=12)
-st_data = st_folium(m, width=725)
+m = folium.Map(location=[37.7749, -122.4194], zoom_start=10)
+st.pydeck_chart(m)
