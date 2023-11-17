@@ -1,4 +1,13 @@
-import streamlit as st
 import folium
-m = folium.Map(location=[37.7749, -122.4194], zoom_start=10)
-st.pydeck_chart(m)
+import streamlit as st
+
+from streamlit_folium import st_folium
+
+center = [37.5010,127.0509] 
+# center on Seoul pharmacy
+m = folium.Map(location=center, zoom_start=18)
+markers = plugins.MarkerCluster(transformed_coord_list)
+markers.add_to(m) 
+
+# call to render Folium map in Streamlit
+st_data = st_folium(m, width=725)
