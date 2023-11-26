@@ -19,23 +19,22 @@ class MultiApp:
         })
 
     def run():
-        with st.sidebar:
-            app = option_menu(
-                menu_title='Pondering',
-                options=['Home', 'Camera'],
-                icons=['house-fill', 'camera-video-fill'],
-                menu_icon='chat-text-fill',
-                default_index=1,
-                styles={
-                    "container": {"padding": "5!important", "background-color":'black'},
-                    "icon": {"color": "white", "font-size": "23px"},
-                    "nav-link": {"color": "white", "font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "blue"},
-                    "nav-link-selected": {"background-color": "#02ab21"},}
-            )
+        app = option_menu(
+            menu_title='Pondering',
+            options=['Home', 'Camera'],
+            icons=['house-fill', 'camera-video-fill'],
+            menu_icon='chat-text-fill',
+            default_index=1,
+            styles={
+                "container": {"padding": "5!important", "background-color":'black'},
+                "icon": {"color": "white", "font-size": "23px"},
+                "nav-link": {"color": "white", "font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "blue"},
+                "nav-link-selected": {"background-color": "#02ab21"},}
+        )
 
-            if app=='Home':
-                study1.app()
-            if app == 'Camera':
-                page2.app()
+        if app=='Home':
+            study1.app()
+        if app == 'Camera':
+            page2.app()
 
     run()
