@@ -18,7 +18,7 @@ class MultiApp:
             "function": function
         })
 
-    def run(self):
+    def run():
         with st.sidebar:
             app = option_menu(
                 menu_title='Pondering',
