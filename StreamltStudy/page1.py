@@ -24,7 +24,8 @@ class MultiApp:
             options=['Home', 'Camera'],
             icons=['house-fill', 'camera-video-fill'],
             menu_icon='chat-text-fill',
-            default_index=2,
+            default_index=1,
+            orientation='horizontal',
             styles={
                 "container": {"padding": "5!important", "background-color":'black'},
                 "icon": {"color": "white", "font-size": "23px"},
