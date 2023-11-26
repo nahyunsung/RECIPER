@@ -10,3 +10,4 @@ streamlit-folium==0.15.1
 streamlit-option-menu==0.3.6
 streamlit-webrtc==0.47.1
 watchdog==3.0.0
+av==10.0.0
