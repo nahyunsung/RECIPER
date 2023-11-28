@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 
 def detect_objects(image, model):
-    image_resized = tf.image.resize(np.array(image), (224, 224))
+    image_resized = tf.image.resize(image, (224, 224))
     image_normalized = (tf.cast(image_resized, tf.float32) / 127.0) - 1.0
     image_reshaped = tf.reshape(image_normalized, (1, 224, 224, 3))
 
@@ -40,10 +40,10 @@ def app():
         
         # Check the type of img_tensor:
         # Should output: <class 'tensorflow.python.framework.ops.EagerTensor'>
-        st.write(type(img_tensor))
+        st.write(type(img_array))
     
         # Check the shape of img_tensor:
         # Should output shape: (height, width, channels)
-        st.write(img_tensor.shape)
+        st.write(img_array.shape)
         
-        st.write(readLines[result])
+        st.write(readLines[prediction_result])
