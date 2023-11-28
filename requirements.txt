@@ -1,7 +1,6 @@
 ﻿folium==0.15.0
 matplotlib==3.8.1
 numpy==1.26.2
-opencv-python==4.8.1.78
 opencv-python-headless==4.8.1.78
 pandas==2.1.3
 Pillow==10.1.0
