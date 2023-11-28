@@ -11,6 +11,13 @@ def app():
     st.image(image)
     
     m = folium.Map(location=[37.7749, -122.4194], zoom_start=10)
+
+    latData = 37.39905896377514 # 안양공업고등학교 위도
+    lonData = 126.91454564601396 # 안양공업고등학교 경도
+    
+    center = [37.541, 126.986]
+    
+    m = folium.Map(location=center, zoom_start=12)
     
     # Folium 맵을 HTML 코드로 변환
     folium_html = m._repr_html_()
