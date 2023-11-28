@@ -17,7 +17,7 @@ def app():
     m = folium.Map(location=[37.564214, 127.001699], zoom_start=12)
 
     custom_icon = folium.CustomIcon(
-        icon_image='aniicon.png',  # 사용자 지정 이미지 파일의 경로
+        icon_image='https://github.com/nahyunsung/RECIPER/blob/4d95abd581944323e6849bf73f5bfb1a7e4395f5/aniicon.png',  # 사용자 지정 이미지 파일의 경로
         icon_size=(30, 30)  # 이미지의 크기
     )
     
