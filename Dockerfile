@@ -1,2 +1,2 @@
-RUN apt-get update
-RUN apt-get -y install libgl1-mesa-glx
+sudo apt-get update
+sudo apt-get install libgl1-mesa-glx
