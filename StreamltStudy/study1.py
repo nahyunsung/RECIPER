@@ -20,7 +20,7 @@ def app():
     
     for idx,geo_df_row in df.iterrows() :
         html = """
-            <h1 th:text="${idx}>asdf</h1><br>
+            <h1>asdf</h1><br>
             With a few lines of code...
             <p>geo_df_row['전화번호']
             <script>
