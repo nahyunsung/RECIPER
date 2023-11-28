@@ -26,6 +26,7 @@ def app():
             <code>
                 from numpy import *<br>
                 exp(-2*pi)
+                geo_df_row('전화번호')
             </code>
             </p>
             """
