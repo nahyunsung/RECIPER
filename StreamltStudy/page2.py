@@ -22,6 +22,22 @@ def app():
     frame_placeholder = st.empty()
 
     stop_button_pressed = st.button("Stop")
+
+    while cap.isOpened() and not stop_button_pressed:
+        ret, frame = cap.read()
+    
+        if not ret:
+            st.write("The video capture has ended.")
+            break
+    
+        # You can process the frame here if needed
+        # e.g., apply filters, transformations, or object detection
+    
+        # Convert the frame from BGR to RGB format
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    
+        # Display the frame using Streamlit's st.image
+        frame_placeholder.image(frame, channels="RGB")
     
 def main():
     camera = cv2.VideoCapture(0)
