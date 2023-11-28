@@ -14,8 +14,8 @@ def app():
     df = pd.read_csv("cat_url_list.csv", encoding='UTF8')
     df = df.dropna()
     m = folium.Map(location=[37.564214, 127.001699], zoom_start=12)
-    icon_image = Image.open("aniicon.png")
-    shadow_image = Image.open("aniicon.png")
+    icon_image = numpy.array(Image.open("aniicon.png"))
+    shadow_image = numpy.array(Image.open("aniicon.png"))
     
     icon = folium.CustomIcon(
         icon_image,
