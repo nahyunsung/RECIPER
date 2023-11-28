@@ -18,6 +18,7 @@ def app():
     #main()
 
     cap = cv2.VideoCapture(0)
+    st.title("Video Capture with OpenCV")
 
 def main():
     camera = cv2.VideoCapture(0)
