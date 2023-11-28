@@ -47,5 +47,3 @@ def app():
         st.write(img_tensor.shape)
         
         st.write(readLines[result])
-
-app()
