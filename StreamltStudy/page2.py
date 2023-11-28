@@ -1,5 +1,6 @@
 import streamlit as st
 import tensorflow as tf
+from PIL import Image
 import numpy as np
 
 def detect_objects(image, model):
@@ -25,10 +26,9 @@ def app():
     if img_file_buffer  is not None:
         st.write('Camera')
         # To read image file buffer as a 3D uint8 tensor with TensorFlow:
-        bytes_data = img_file_buffer.getvalue()
-        img_tensor = tf.image.decode_image(bytes_data, channels=3)
+        img_tensor = tf.convert_to_tensor(img_file_buffer)
 
-        prediction_result = detect_objects(img_file_buffer , model)
+        prediction_result = detect_objects(img_tensor , model)
 
         with open(labels_path, 'rt', encoding="UTF8") as f:
             readLines = f.readlines()
