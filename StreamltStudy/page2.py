@@ -45,7 +45,7 @@ def main():
 
         st.write(readLines[result])
 
-        cv2.imshow("camera out", image)
+        frame_placeholder.image(image, channels="RGB")
         if cv2.waitKey(100) == ord('q'):
             break
 
