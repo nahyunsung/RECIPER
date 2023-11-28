@@ -47,7 +47,7 @@ def app():
 
 def detect_objects(image):
     image_resized = tf.image.resize(np.array(image), (224, 224))
-    image_normalized = (image_resized.astype(np.float32) / 127.0) - 1
+    image_normalized = (image_resized.cast(np.float32) / 127.0) - 1
     image_reshaped = image_normalized.reshape((1, 224, 224, 3))
 
     # Make predictions
