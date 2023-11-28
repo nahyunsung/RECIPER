@@ -18,8 +18,8 @@ def app():
 
 
     
-    for idx, geo_df_row in df.iterrows() :
-        html = """
+    for idx,let geo_df_row in df.iterrows() :
+        let html = """
             <h1>${geo_df_row['보호센터명']}</h1><br>
             With a few lines of code...
             <p>geo_df_row['전화번호']
@@ -29,7 +29,8 @@ def app():
                 
             </code>
             </p>
-            """
+        """
+        $('#cards-box').append(temp_html)
         
         iframe = branca.element.IFrame(html=html, width=500, height=300)
         popup = folium.Popup(iframe, max_width=500)
