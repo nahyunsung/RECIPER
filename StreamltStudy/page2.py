@@ -15,7 +15,9 @@ def video_frame_callback(frame):
 def app():
     st.write('Camera')
     #webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
-    main()
+    #main()
+
+    cap = cv2.VideoCapture(0)
 
 def main():
     camera = cv2.VideoCapture(0)
