@@ -18,9 +18,10 @@ def app():
 
     custom_icon = folium.CustomIcon(
         icon_image='aniicon.png',  # 사용자 지정 이미지 파일의 경로
-        icon_size=(30, 30)  # 이미지의 크기)
+        icon_size=(30, 30)  # 이미지의 크기
+    )
     
-    for idx,geo_df_row in df.iterrows() :
+    for idx,geo_df_row in df.iterrows():
         html = f"""
             <h1>{geo_df_row['보호센터명']}</h1><br>
             <h3>{geo_df_row['보호센터주소']}</h3><br>
