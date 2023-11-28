@@ -11,7 +11,7 @@ def app():
     image = Image.open('StreamltStudy/cat1.png')
     st.image(image)
     
-    df = pd.read_csv("cat_ho_list.csv", encoding='UTF8')
+    df = pd.read_csv("cat_url_list.csv", encoding='UTF8')
     df = df.dropna()
     m = folium.Map(location=[37.564214, 127.001699], zoom_start=12)
     
