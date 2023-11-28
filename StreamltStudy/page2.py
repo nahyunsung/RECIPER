@@ -19,11 +19,18 @@ def app():
     #main()
     
     img_file_buffer = st.camera_input("Take a picture")
-
+    
+    model_path = r"keras_model.h5"
+    model = tensorflow.keras.models.load_model(model_path, compile=False)
+    labelspath = r"labels.txt"
+    
     if img_file_buffer is not None:
         # To read image file buffer as a 3D uint8 tensor with TensorFlow:
         bytes_data = img_file_buffer.getvalue()
         img_tensor = tf.io.decode_image(bytes_data, channels=3)
+
+        image_normalized = (bytes_data.astype(np.float32)/127.0)-1
+        
     
         # Check the type of img_tensor:
         # Should output: <class 'tensorflow.python.framework.ops.EagerTensor'>
