@@ -10,9 +10,5 @@ def app():
     image = Image.open('StreamltStudy/cat1.png')
     st.image(image)
     
-    center = [37.5010,127.0509] 
-    # center on Seoul pharmacy
-    m = folium.Map(location=center, zoom_start=18)
-
-    # call to render Folium map in Streamlit
-    st_data = st_folium(m, width=725)
+    m = folium.Map(location=[45, -122], zoom_start=4)
+    out = st_folium(m, height=200, return_on_hover=return_on_hover)
