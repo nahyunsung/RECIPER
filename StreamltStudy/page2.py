@@ -38,12 +38,6 @@ def app():
         with open(labels_path, 'rt', encoding="UTF8") as f:
             readLines = f.readlines()
         
-        # Check the type of img_tensor:
-        # Should output: <class 'tensorflow.python.framework.ops.EagerTensor'>
-        st.write(type(img_array))
-    
-        # Check the shape of img_tensor:
-        # Should output shape: (height, width, channels)
-        st.write(img_array.shape)
+        
         
         st.write(readLines[prediction_result])
