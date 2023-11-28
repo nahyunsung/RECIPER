@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import folium
 from streamlit_folium import st_folium
+from folium import plugins
 
 def app():
     st.title('길고양이 증가에 따른 생태계 파괴')
