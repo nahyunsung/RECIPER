@@ -37,6 +37,9 @@ def app():
         html = f"""
             <!DOCTYPE html>
             <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Folium Map with Click Event</title>
                 {js_code}
             </head>
             <body>
