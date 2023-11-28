@@ -23,14 +23,14 @@ def app():
     
     model_path = r"keras_model.h5"
     model = tf.keras.models.load_model(model_path, compile=False)
-    labelspath = r"labels.txt"
+    labels_path = r"labels.txt"
     
     if img_file_buffer is not None:
         # To read image file buffer as a 3D uint8 tensor with TensorFlow:
         bytes_data = img_file_buffer.getvalue()
         img_tensor = tf.image.decode_image(bytes_data, channels=3)
 
-        prediction_result = detect_objects(img_tensor)
+        prediction_result = detect_objects(img_tensor, model)
 
         with open(labels_path, 'rt', encoding="UTF8") as f:
             readLines = f.readlines()
@@ -45,9 +45,9 @@ def app():
         
         st.write(readLines[result])
 
-def detect_objects(image):
+def detect_objects(image, model):
     image_resized = tf.image.resize(np.array(image), (224, 224))
-    image_normalized = (image_resized.cast(image_resized, tf.float32) / 127.0) - 1.0
+    image_normalized = (tf.cast(image_resized, tf.float32) / 127.0) - 1.0
     image_reshaped = image_normalized.reshape((1, 224, 224, 3))
 
     # Make predictions
