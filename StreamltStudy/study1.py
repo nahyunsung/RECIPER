@@ -37,7 +37,7 @@ def app():
         marker = folium.Marker(
             location=[geo_df_row["위도"], geo_df_row["경도"]],
             popup=popup,  # 마커에 표시될 설명
-            icon=custom_icon  # 마커의 아이콘 설정
+            icon=folium.Icon(color='blue')  # 마커의 아이콘 설정
         )
         
         # 마커를 Folium 맵에 추가
