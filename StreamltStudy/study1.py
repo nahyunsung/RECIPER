@@ -11,13 +11,12 @@ def app():
     st.image(image)
     
     m = folium.Map(location=[37.7749, -122.4194], zoom_start=10)
+    df = pd.read_csv("cat_ho_list.csv", encoding='cp949')
+    df = df.dropna()
 
-    latData = 37.39905896377514 # 안양공업고등학교 위도
-    lonData = 126.91454564601396 # 안양공업고등학교 경도
-    
-    center = [37.541, 126.986]
-    
-    m = folium.Map(location=center, zoom_start=12)
+    for idx, geo_df_row in df.iterrows() :
+        folium.Circle(radius=200, location=[geo_df_row["위도"], geo_df_row["경도"]], color='#8A2908').add_to(m)
+
     
     # Folium 맵을 HTML 코드로 변환
     folium_html = m._repr_html_()
