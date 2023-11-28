@@ -22,11 +22,11 @@ def app():
         html = """
             <h1> This popup is an Iframe</h1><br>
             With a few lines of code...
-            <p>
+            <p>geo_df_row('전화번호')
             <code>
                 from numpy import *<br>
                 exp(-2*pi)
-                geo_df_row('전화번호')
+                
             </code>
             </p>
             """
