@@ -17,36 +17,12 @@ def app():
     m = folium.Map(location=[37.564214, 127.001699], zoom_start=12)
     pushpin = folium.features.CustomIcon('aniicon.png', icon_size=(30,30))
     #folium.Icon(color='blue')
-
-    js_code = """
-    <script>
-        var map = L.DomUtil.get('map');
-        map.addEventListener('click', function(e) {
-            var popup = L.popup()
-                .setLatLng(e.latlng)
-                .setContent('클릭한 위치: ' + e.latlng.toString())
-                .openOn(map);
-            
-            var marker = L.marker(e.latlng).addTo(map);
-        });
-    </script>
-    """
-
     
     for idx,geo_df_row in df.iterrows():
         html = f"""
-            <!DOCTYPE html>
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Folium Map with Click Event</title>
-                {js_code}
-            </head>
-            <body>
-                <h1>{geo_df_row['보호센터명']}</h1><br>
-                <h3>{geo_df_row['보호센터주소']}</h3><br>
-                <p>{geo_df_row['전화번호']}</p>
-            </body>
+            <h1>{geo_df_row['보호센터명']}</h1><br>
+            <h3>{geo_df_row['보호센터주소']}</h3><br>
+            <p>{geo_df_row['전화번호']}</p>
         """
         
         iframe = branca.element.IFrame(html=html, width=500, height=300)
