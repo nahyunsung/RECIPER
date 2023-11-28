@@ -16,7 +16,7 @@ def app():
     m = folium.Map(location=[37.564214, 127.001699], zoom_start=12)
     
     for idx, geo_df_row in df.iterrows() :
-        folium.Circle(radius=200, location=[geo_df_row["위도"], geo_df_row["경도"]], color='#8A2908').add_to(m)
+        folium.Marker(radius=200, location=[geo_df_row["위도"], geo_df_row["경도"]], color='#8A2908').add_to(m)
 
     
     # Folium 맵을 HTML 코드로 변환
