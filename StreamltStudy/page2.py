@@ -13,7 +13,6 @@ def video_frame_callback(frame):
     return av.VideoFrame.from_ndarray(flipped, format="bgr24")
 
 def app():
-    cv2.destroyAllWindows()
     st.write('Camera')
     #webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
     #main()
