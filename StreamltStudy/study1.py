@@ -23,11 +23,10 @@ def app():
             <h1 th:text="${idx}>asdf</h1><br>
             With a few lines of code...
             <p>geo_df_row['전화번호']
-            <code>
-                from numpy import *<br>
-                exp(-2*pi)
-                
-            </code>
+            <script>
+                let c = 11;
+                document.write(c, "<br>");
+            </script>
             </p>
         """
         
