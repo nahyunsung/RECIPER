@@ -24,6 +24,7 @@ def app():
     labels_path = r"labels.txt"
     
     if img_file_buffer  is not None:
+        st.write('Camera')
         # PIL Image로 변환
         pil_image = Image.open(img_file_buffer)
 
