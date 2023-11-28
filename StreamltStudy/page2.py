@@ -3,7 +3,7 @@ from streamlit_webrtc import webrtc_streamer
 import av
 from PIL import Image
 import cv2
-vimport tensorflow.keras
+import tensorflow.keras
 
 def video_frame_callback(frame):
     img = frame.to_ndarray(format="bgr24")
@@ -21,9 +21,9 @@ def main():
     camera = cv2.VideoCapture(0)
     camera.set(3,640)
     camera.set(4,480)
-    model_path = r"ai\keras_model.h5"
+    model_path = r"keras_model.h5"
     model = tensorflow.keras.models.load_model(model_path)
-    labelspath = r"ai\labels.txt"
+    labelspath = r"labels.txt"
 
     while(camera.isOpened()):
         , image = camera.read()
@@ -40,7 +40,7 @@ def main():
         with open(labels_path, 'rt', encoding="UTF8") as f:
             readLines = f.readlines()
 
-        print(readLines[result])
+        st.write(readLines[result])
 
         cv2.imshow("camera out", image)
         if cv2.waitKey(100) == ord('q'):
