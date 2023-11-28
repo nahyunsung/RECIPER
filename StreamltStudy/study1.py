@@ -20,9 +20,9 @@ def app():
     
     for idx, geo_df_row in df.iterrows() :
         html = """
-            <h1> This popup is an Iframe</h1><br>
+            <h1>#{geo_df_row['동물병원이름']}</h1><br>
             With a few lines of code...
-            <p>geo_df_row('전화번호')
+            <p>geo_df_row['전화번호']
             <code>
                 from numpy import *<br>
                 exp(-2*pi)
