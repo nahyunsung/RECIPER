@@ -22,7 +22,7 @@ def main():
     camera.set(3,640)
     camera.set(4,480)
     model_path = r"keras_model.h5"
-    model = tensorflow.keras.models.load_model(model_path)
+    model = tensorflow.keras.models.load_model(model_path, compile=False)
     labelspath = r"labels.txt"
 
     while(camera.isOpened()):
