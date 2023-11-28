@@ -15,8 +15,14 @@ def app():
     df = pd.read_csv("cat_url_list.csv", encoding='UTF8')
     df = df.dropna()
     m = folium.Map(location=[37.564214, 127.001699], zoom_start=12)
-    pushpin = folium.features.CustomIcon('aniicon.png', icon_size=(30,30))
+    
     #folium.Icon(color='blue')
+    custom_icon = folium.CustomIcon(
+        icon_image='aniicon.png',  # 사용자 지정 이미지 파일의 경로
+        icon_size=(30, 30),  # 이미지의 크기
+        icon_anchor=(15, 15),  # 이미지의 앵커 위치 (중심점)
+        popup_anchor=(0, -15)  # 팝업의 앵커 위치 (마커 아이콘 위쪽)
+    )
     
     for idx,geo_df_row in df.iterrows():
         html = f"""
@@ -31,7 +37,7 @@ def app():
         marker = folium.Marker(
             location=[geo_df_row["위도"], geo_df_row["경도"]],
             popup=popup,  # 마커에 표시될 설명
-            icon=folium.Icon(icon =pushpin)  # 마커의 아이콘 설정
+            icon=custom_icon  # 마커의 아이콘 설정
         )
         
         # 마커를 Folium 맵에 추가
