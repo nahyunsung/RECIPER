@@ -27,7 +27,7 @@ def app():
     if img_file_buffer is not None:
         # To read image file buffer as a 3D uint8 tensor with TensorFlow:
         bytes_data = img_file_buffer.getvalue()
-        img_tensor = tf.io.decode_image(bytes_data, channels=3)
+        #img_tensor = tf.io.decode_image(bytes_data, channels=3)
 
         image_normalized = (bytes_data.astype(np.float32)/127.0)-1
         image_reshaped = image_normalized.reshape((1, 224, 224, 3))
