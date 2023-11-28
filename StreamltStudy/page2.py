@@ -18,7 +18,7 @@ def app():
     main()
     
 def main():
-    camera = cv2.VideoCapture(0,cv2.CAP_DSHOW)
+    camera = cv2.VideoCapture(cv2.CAP_DSHOW+0)
     camera.set(3,640)
     camera.set(4,480)
     model_path = r"keras_model.h5"
