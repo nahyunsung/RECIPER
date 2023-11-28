@@ -42,7 +42,7 @@ def app():
         
         # 마커를 Folium 맵에 추가
         marker.add_to(m)
-        
+    m.save("folium_map_with_custom_icon.html")
     # Folium 맵을 HTML 코드로 변환
     folium_html = m._repr_html_()
     
