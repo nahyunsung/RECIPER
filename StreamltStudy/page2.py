@@ -25,7 +25,7 @@ def main():
     model = tensorflow.keras.models.load_model(model_path, compile=False)
     labelspath = r"labels.txt"
     
-    #frame_placeholder = st.empty()
+    frame_placeholder = st.empty()
     #frame_placeholder.image(frame, channels="RGB")
     
     while(camera.isOpened()):
