@@ -22,7 +22,7 @@ def app():
     model = tf.keras.models.load_model(model_path, compile=False)
     labels_path = r"labels.txt"
     
-    if taken and camera_frame is not None
+    if taken and camera_frame is not None:
         st.write('Camera')
         # To read image file buffer as a 3D uint8 tensor with TensorFlow:
         bytes_data = img_file_buffer.getvalue()
