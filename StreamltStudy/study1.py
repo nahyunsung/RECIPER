@@ -24,7 +24,7 @@ def app():
             With a few lines of code...
             <p>geo_df_row['전화번호']
             <script>
-                let c = 11;
+                let c = idx;
                 document.write(c, "<br>");
             </script>
             </p>
