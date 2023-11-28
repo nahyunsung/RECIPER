@@ -10,11 +10,10 @@ def app():
     image = Image.open('StreamltStudy/cat1.png')
     st.image(image)
     
-    m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
-    folium.Marker(
-        [39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell"
-    ).add_to(m)
+    m = folium.Map(location=[37.7749, -122.4194], zoom_start=10)
+
+    # Folium 맵을 HTML 파일로 저장
+    m.save("folium_map.html")
     
-    # call to render Folium map in Streamlit, but don't get any data back
-    # from the map (so that it won't rerun the app when the user interacts)
-    st_folium(m, width=725, returned_objects=[])
+    # Streamlit에서 HTML 파일을 로드하여 표시
+    st.components.v1.iframe("folium_map.html", width=700, height=500)
