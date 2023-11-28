@@ -22,7 +22,7 @@ def app():
         html = f"""
             <h1>asdf</h1><br>
             With a few lines of code...
-            <p>geo_df_row['전화번호']
+            <p>{geo_df_row['전화번호']}
             </p>
         """
         
