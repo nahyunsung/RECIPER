@@ -16,19 +16,19 @@ def detect_objects(image, model):
 def app():
     st.write('Camera')
     
-    camera_frame, taken = st.camera_input("Take a picture")
+    img_file_buffer  = st.camera_input("Take a picture")
     
     model_path = r"keras_model.h5"
     model = tf.keras.models.load_model(model_path, compile=False)
     labels_path = r"labels.txt"
     
-    if taken and camera_frame is not None:
+    if img_file_buffer  is not None:
         st.write('Camera')
         # To read image file buffer as a 3D uint8 tensor with TensorFlow:
         bytes_data = img_file_buffer.getvalue()
-        img_tensor = tf.image.decode_image(camera_frame, channels=3)
+        img_tensor = tf.image.decode_image(bytes_data, channels=3)
 
-        prediction_result = detect_objects(img_tensor, model)
+        prediction_result = detect_objects(img_file_buffer , model)
 
         with open(labels_path, 'rt', encoding="UTF8") as f:
             readLines = f.readlines()
