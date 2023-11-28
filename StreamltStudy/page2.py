@@ -38,6 +38,12 @@ def app():
     
         # Display the frame using Streamlit's st.image
         frame_placeholder.image(frame, channels="RGB")
+        
+        if cv2.waitKey(1) & 0xFF == ord("q") or stop_button_pressed: 
+            break
+    
+    cap.release()
+    cv2.destroyAllWindows()
     
 def main():
     camera = cv2.VideoCapture(0)
