@@ -14,11 +14,27 @@ def app():
     df = pd.read_csv("cat_url_list.csv", encoding='UTF8')
     df = df.dropna()
     m = folium.Map(location=[37.564214, 127.001699], zoom_start=12)
+
+
     
     for idx, geo_df_row in df.iterrows() :
+        html = """
+            <h1> This popup is an Iframe</h1><br>
+            With a few lines of code...
+            <p>
+            <code>
+                from numpy import *<br>
+                exp(-2*pi)
+            </code>
+            </p>
+            """
+        
+        iframe = branca.element.IFrame(html=html, width=500, height=300)
+        popup = folium.Popup(iframe, max_width=500)
+        
         marker = folium.Marker(
             location=[geo_df_row["위도"], geo_df_row["경도"]],
-            popup=geo_df_row['전화번호'],  # 마커에 표시될 설명
+            popup=popup,  # 마커에 표시될 설명
             icon=folium.Icon(color='blue',icon='star')  # 마커의 아이콘 설정
         )
         
