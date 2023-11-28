@@ -17,8 +17,8 @@ def app():
     #webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
     #main()
 
-    cap = cv2.VideoCapture(1)
     st.title("Video Capture with OpenCV")
+cap = cv2.VideoCapture(0)
 
 def main():
     camera = cv2.VideoCapture(0)
