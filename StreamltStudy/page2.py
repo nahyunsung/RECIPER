@@ -26,7 +26,7 @@ def main():
     labelspath = r"labels.txt"
 
     while(camera.isOpened()):
-        , image = camera.read()
+        image = camera.read()
 
         size = (224, 224)
         image_resized = cv2.resize(image, size, interpolation=cv2.INTER_AREA)
