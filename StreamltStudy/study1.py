@@ -18,8 +18,7 @@ def app():
 
     custom_icon = folium.CustomIcon(
         icon_image='aniicon.png',  # 사용자 지정 이미지 파일의 경로
-        icon_size=(30, 30)  # 이미지의 크기
-    )
+        icon_size=(30, 30)  # 이미지의 크기)
     
     for idx,geo_df_row in df.iterrows() :
         html = f"""
@@ -34,7 +33,7 @@ def app():
         marker = folium.Marker(
             location=[geo_df_row["위도"], geo_df_row["경도"]],
             popup=popup,  # 마커에 표시될 설명
-            icon=custom_icon)  # 마커의 아이콘 설정
+            icon=custom_icon  # 마커의 아이콘 설정
         )
         
         # 마커를 Folium 맵에 추가
