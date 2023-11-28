@@ -11,4 +11,3 @@ def app():
     st.image(image)
     
     m = folium.Map(location=[45, -122], zoom_start=4)
-    out = st_folium(m, height=200, return_on_hover=return_on_hover)
