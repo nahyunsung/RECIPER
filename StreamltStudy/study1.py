@@ -15,7 +15,7 @@ def app():
     df = df.dropna()
     m = folium.Map(location=[37.564214, 127.001699], zoom_start=12)
     icon_image = Image.open("aniicon.png")
-    shadow_image = Image.open("leaf-shadow.png")
+    shadow_image = Image.open("aniicon.png")
     
     icon = folium.CustomIcon(
         icon_image,
