@@ -12,7 +12,7 @@ def app():
     st.image(image)
     
     m = folium.Map(location=[37.7749, -122.4194], zoom_start=10)
-    df = pd.read_csv("cat_ho_list.csv", encoding='cp949')
+    df = pd.read_csv("cat_ho_list.csv", encoding='UTF8')
     df = df.dropna()
 
     for idx, geo_df_row in df.iterrows() :
