@@ -11,10 +11,10 @@ def app():
     image = Image.open('StreamltStudy/cat1.png')
     st.image(image)
     
-    m = folium.Map(location=[37.7749, -122.4194], zoom_start=10)
     df = pd.read_csv("cat_ho_list.csv", encoding='UTF8')
     df = df.dropna()
-
+    m = folium.Map(location=[37.564214, 127.001699], zoom_start=12)
+    
     for idx, geo_df_row in df.iterrows() :
         folium.Circle(radius=200, location=[geo_df_row["위도"], geo_df_row["경도"]], color='#8A2908').add_to(m)
 
