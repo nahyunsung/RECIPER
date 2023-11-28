@@ -19,14 +19,10 @@ def app():
 
     
     for idx,geo_df_row in df.iterrows() :
-        html = """
+        html = f"""
             <h1>asdf</h1><br>
             With a few lines of code...
             <p>geo_df_row['전화번호']
-            <script>
-                let c = idx;
-                document.write(c, "<br>");
-            </script>
             </p>
         """
         
