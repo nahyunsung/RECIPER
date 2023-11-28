@@ -4,7 +4,7 @@ import folium
 from streamlit_folium import st_folium
 from folium import plugins
 import pandas as pd
-import branca4
+import branca
 from flask import Flask, render_template_string
 
 def app():
