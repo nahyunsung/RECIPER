@@ -19,7 +19,7 @@ def app():
     #folium.Icon(color='blue')
     custom_icon = folium.CustomIcon(
         icon_image='aniicon.png',  # 사용자 지정 이미지 파일의 경로
-        icon_size=(100, 100),  # 이미지의 크기
+        icon_size=(30, 30),  # 이미지의 크기
         icon_anchor=(15, 15),  # 이미지의 앵커 위치 (중심점)
         popup_anchor=(0, -15)  # 팝업의 앵커 위치 (마커 아이콘 위쪽)
     )
