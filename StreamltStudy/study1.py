@@ -10,10 +10,10 @@ def app():
     image = Image.open('StreamltStudy/cat1.png')
     st.image(image)
     
-    m = folium.Map(location=[37.7749, -122.4194], zoom_start=10)
-
-    # Folium 맵을 HTML 파일로 저장
-    m.save("folium_map.html")
+    st.set_page_config(layout="wide")
     
-    # Streamlit에서 HTML 파일을 로드하여 표시
-    st.components.v1.iframe("folium_map.html", width=700, height=500)
+    # Folium 맵 생성
+    m = folium.Map(location=[37.7749, -122.4194], zoom_start=10)
+    
+    # Folium 맵을 Streamlit에 표시
+    folium_static(m)
