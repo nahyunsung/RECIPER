@@ -16,9 +16,15 @@ def app():
     m = folium.Map(location=[37.564214, 127.001699], zoom_start=12)
     
     for idx, geo_df_row in df.iterrows() :
-        folium.Marker(radius=200, location=[geo_df_row["위도"], geo_df_row["경도"]], popup="asdf").add_to(m)
-
-    
+        marker = folium.Marker(
+            location=[geo_df_row["위도"], geo_df_row["경도"]],
+            popup=geo_df_row['전화번호'],  # 마커에 표시될 설명
+            icon=folium.Icon(color='blue')  # 마커의 아이콘 설정
+        )
+        
+        # 마커를 Folium 맵에 추가
+        marker.add_to(m)
+        
     # Folium 맵을 HTML 코드로 변환
     folium_html = m._repr_html_()
     
