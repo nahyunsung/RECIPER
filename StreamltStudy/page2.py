@@ -15,35 +15,7 @@ def video_frame_callback(frame):
 def app():
     st.write('Camera')
     #webrtc_streamer(key="example", video_frame_callback=video_frame_callback)
-    #main()
-
-    cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
-    st.title("Video Capture with OpenCV")
-    frame_placeholder = st.empty()
-
-    stop_button_pressed = st.button("Stop")
-
-    while cap.isOpened() and not stop_button_pressed:
-        ret, frame = cap.read()
-    
-        if not ret:
-            st.write("The video capture has ended.")
-            break
-    
-        # You can process the frame here if needed
-        # e.g., apply filters, transformations, or object detection
-    
-        # Convert the frame from BGR to RGB format
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    
-        # Display the frame using Streamlit's st.image
-        frame_placeholder.image(frame, channels="RGB")
-        
-        if cv2.waitKey(1) & 0xFF == ord("q") or stop_button_pressed: 
-            break
-    
-    cap.release()
-    cv2.destroyAllWindows()
+    main()
     
 def main():
     camera = cv2.VideoCapture(0)
@@ -52,7 +24,10 @@ def main():
     model_path = r"keras_model.h5"
     model = tensorflow.keras.models.load_model(model_path, compile=False)
     labelspath = r"labels.txt"
-
+    
+    #frame_placeholder = st.empty()
+    #frame_placeholder.image(frame, channels="RGB")
+    
     while(camera.isOpened()):
         image = camera.read()
 
