@@ -24,9 +24,14 @@ def app():
     labels_path = r"labels.txt"
     
     if img_file_buffer  is not None:
-        st.write('Camera')
-        # To read image file buffer as a 3D uint8 tensor with TensorFlow:
-        img_tensor = tf.convert_to_tensor(img_file_buffer)
+        # PIL Image로 변환
+        pil_image = Image.open(img_file_buffer)
+
+        # PIL Image를 NumPy 배열로 변환
+        img_array = np.array(pil_image)
+
+        # NumPy 배열을 TensorFlow 텐서로 변환
+        img_tensor = tf.convert_to_tensor(img_array)
 
         prediction_result = detect_objects(img_tensor , model)
 
