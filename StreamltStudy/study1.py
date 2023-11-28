@@ -4,7 +4,8 @@ import folium
 from streamlit_folium import st_folium
 from folium import plugins
 import pandas as pd
-import branca
+import branca4
+from flask import Flask, render_template_string
 
 def app():
     st.title('길고양이 증가에 따른 생태계 파괴')
