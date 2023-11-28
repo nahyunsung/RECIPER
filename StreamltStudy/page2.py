@@ -30,8 +30,13 @@ def app():
         img_tensor = tf.io.decode_image(bytes_data, channels=3)
 
         image_normalized = (bytes_data.astype(np.float32)/127.0)-1
+        image_reshaped = image_normalized.reshape((1, 224, 224, 3))
+        prediction = model.predict(image_reshaped)
+        result = np.argmax(prediction)
+
+        with open(labels_path, 'rt', encoding="UTF8") as f:
+            readLines = f.readlines()
         
-    
         # Check the type of img_tensor:
         # Should output: <class 'tensorflow.python.framework.ops.EagerTensor'>
         st.write(type(img_tensor))
@@ -39,6 +44,8 @@ def app():
         # Check the shape of img_tensor:
         # Should output shape: (height, width, channels)
         st.write(img_tensor.shape)
+        
+        st.write(readLines[result])
     
 def main():
     camera = cv2.VideoCapture(cv2.CAP_DSHOW+0)
