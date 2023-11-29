@@ -40,4 +40,4 @@ def app():
         
         
         
-        st.write(readLines[prediction_result])
+        st.write(readLines[prediction_result][0])
