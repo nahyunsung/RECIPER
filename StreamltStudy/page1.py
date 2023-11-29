@@ -5,7 +5,7 @@ from streamlit_option_menu import option_menu
 import study1, page2
 
 st.set_page_config(
-    page_title="CAT",
+    page_title="고공행진",
 )
 
 class MultiApp:
