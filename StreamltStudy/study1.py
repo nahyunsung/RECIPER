@@ -55,6 +55,3 @@ def app():
 
 
     st.button('글쓰기')
-
-    if st.button('글쓰기'):
-    	break
