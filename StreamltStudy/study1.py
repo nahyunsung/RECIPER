@@ -59,8 +59,5 @@ def app():
     image = Image.open('homeimage1.jpg')
     st.image(image)
 
-    image = "homeimage2.jpg"
-    st.image(image)
-    
     if st.button('글쓰기'):
         on_button_click()
