@@ -40,9 +40,7 @@ def app():
         
         
         
-        st.write(readLines[prediction_result][0])
+        #st.write(readLines[prediction_result][0])
         if readLines[prediction_result][0] == "0":
             image = Image.open('find.jpg')
-        else:
-            image = Image.open('find.jpg')
-        st.image(image)
+            st.image(image)
