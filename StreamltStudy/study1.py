@@ -8,7 +8,12 @@ import branca
 
 def on_button_click():
     new_url = "https://www.notion.so/c0585c3c07ed40f9b172f50a109ab3fc"
-    st.markdown(new_url, unsafe_allow_html=True)
+    js_code = '''
+        <script>
+            window.open('https://www.notion.so/c0585c3c07ed40f9b172f50a109ab3fc', '_blank');
+        </script>
+    '''
+    st.markdown(js_code, unsafe_allow_html=True)
 
 def app():
     image = Image.open('homeimage3.jpg')
