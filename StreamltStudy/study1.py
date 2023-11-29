@@ -60,5 +60,5 @@ def app():
     image = "homeimage2.jpg"
     st.image(image)
     st.button('글쓰기')
-    if st.button("글쓰기", on_click=on_button_click):
-        pass
+    if st.button("글쓰기"):
+        on_button_click()
