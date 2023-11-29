@@ -52,3 +52,9 @@ def app():
 
     image = Image.open('homeimage1.jpg')
     st.image(image)
+
+
+    st.button('글쓰기')
+
+    if st.button('글쓰기'):
+    	break
