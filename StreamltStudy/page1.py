@@ -29,7 +29,7 @@ class MultiApp:
             styles={
                 "container": {"padding": "5!important", "background-color":'white'},
                 "icon": {"color": "black", "font-size": "23px"},
-                "nav-link": {"color": "white", "font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "blue"},
+                "nav-link": {"color": "black", "font-size": "20px", "text-align": "left", "margin":"0px", "--hover-color": "blue"},
                 "nav-link-selected": {"background-color": "#02ab21"},}
         )
 
