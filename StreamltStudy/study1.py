@@ -53,5 +53,5 @@ def app():
     image = Image.open('homeimage1.jpg')
     st.image(image)
 
-
-    st.button('글쓰기')
+    image_path = "homeimage2.jpg"
+    st.button('글쓰기', image=image_path)
