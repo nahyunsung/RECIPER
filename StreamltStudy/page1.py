@@ -20,7 +20,7 @@ class MultiApp:
 
     def run():
         app = option_menu(
-            menu_title='Pondering',
+            menu_title='고공행진',
             options=['Home', 'Camera'],
             icons=['house-fill', 'camera-video-fill'],
             menu_icon='chat-text-fill',
