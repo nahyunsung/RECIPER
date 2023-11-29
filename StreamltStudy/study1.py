@@ -50,5 +50,5 @@ def app():
     # Streamlit에서 HTML 코드를 표시
     st.components.v1.html(folium_html, width=700, height=500)
 
-    image = Image.open('homeimage1.png')
+    image = Image.open('homeimage1.jpg')
     st.image(image)
