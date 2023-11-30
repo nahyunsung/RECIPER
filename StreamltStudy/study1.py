@@ -5,10 +5,12 @@ from streamlit_folium import st_folium
 from folium import plugins
 import pandas as pd
 import branca
+import webbrowser
 
 def on_button_click():
     new_url = "https://cat-symbiosis.softr.app"
     st.markdown(f'<a href="{new_url}" target="_blank">Go to {new_url}</a>', unsafe_allow_html=True)
+    webbrowser.open_new_tab(new_url)
 
 def app():
     image = Image.open('homeimage3.jpg')
