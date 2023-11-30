@@ -7,7 +7,7 @@ import pandas as pd
 import branca
 
 def on_button_click():
-    new_url = "https://www.notion.so/c0585c3c07ed40f9b172f50a109ab3fc"
+    new_url = "https://cat-symbiosis.softr.app"
     st.markdown(f'<a href="{new_url}" target="_blank">Go to {new_url}</a>', unsafe_allow_html=True)
 
 def app():
